@@ -1,0 +1,20 @@
+tab baru
+generate TC per hari, bisa pilih tanggal (yyyy.mm.dd)
+
+steps:
+- /docs/create/all/date -> jadi 5 TC di volumes
+- /docs/unsigned/list/date -> 
+    1. /docs/unsigned/list/date -> apakah ada TC 
+
+tab baru
+- input: tanggal, yp (harus 6dig angka), avg/normal
+
+- plih tanggal -> show total transaksi (/docs/count/date)
+
+
+
+todo:
+- rapihin css
+- loading screen
+- bikin tabel dari get
+- bikin 
