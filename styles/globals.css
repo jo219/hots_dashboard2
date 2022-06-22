@@ -1,16 +1,272 @@
-html,
-body {
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-a {
-  color: inherit;
+body {
+  font-family: Poppins,sans-serif;
+  font-size: 14px;
+  color: #495057;
+  width: 100%;
+  /*height: 100vh;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*-webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;*/
+  /*padding: 0.5%;*/
+  background: rgb(73, 80, 87, 0.05);
+}
+
+#root {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #eff2f7;
+}
+
+th, td {
+  /* padding: 8px 15px; */
+  text-align: left;
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eff2f7;
+  /* border: 2px solid red; */
+  /* margin: 0; */
+  /* background: darkorange; */
+}
+
+td {
+  background: transparent;
+}
+
+tbody tr:hover {
+  background: rgb(73, 80, 87, 0.05);
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  background: transparent;
+}
+
+.sh {
+  box-shadow: 0 .75rem 1.5rem rgba(18,38,63,.03);
+}
+
+.ctn {
+  max-width: 1100px;
+  min-width: 725px; 
+  margin: auto; 
+  width: 100%;
+}
+
+.font-def {
+  font-family: Poppins,sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.nav * {
+  padding: 15px 10px;
+  color: #545a6d;
   text-decoration: none;
+  font-size: 14.5px;
+  line-height: 1.2;
+  font-weight: 500;
+  /* padding: 1rem 1.3rem; */
 }
 
-* {
-  box-sizing: border-box;
+.nav *:hover {
+  color: #556ee6;
+  /* background-color: red; */
+}
+
+.datepicker-style, button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f2f2f2;
+  outline: none;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button {
+  background: #556ee6;
+  color:  white;
+  width: 100px;
+  margin: 10px;
+  font-weight: 600;
+}
+
+.custom-field {
+  --draw-duration: 0.3s;
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field input, .custom-field select, .datepicker-style, .shadowed {
+  -webkit-box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.5px 0.5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.custom-field input:hover, .custom-field select:hover, .datepicker-style:hover, .shadowed:hover {
+  -webkit-box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.custom-field input[type="text"], .custom-field select, .datepicker-style {
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f2f2f2;
+  outline: none;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #aaa;
+  -webkit-transition: top var(--draw-duration) ease, font-size var(--draw-duration) ease, color var(--draw-duration) ease;
+  transition: top var(--draw-duration) ease, font-size var(--draw-duration) ease, color var(--draw-duration) ease;
+}
+
+.custom-field .placeholder:hover {
+  cursor: text;
+}
+
+.custom-field input[type="text"]:valid + .placeholder,
+.custom-field input[type="text"]:focus + .placeholder,
+.custom-field select + .placeholder,
+.datepicker-style + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #222;
+}
+
+.custom-field .arrow {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.custom-field .arrow::before,
+.custom-field .arrow::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.custom-field .arrow::before {
+  --arrow-size: 0.3em;
+  border-left: var(--arrow-size) solid transparent;
+  border-right: var(--arrow-size) solid transparent;
+  border-top: 0.5em solid #555555;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.plain-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 20px 10px;
+  max-width: 500px;
+  padding: 15px;
+  background: white;
+  border-radius: .25rem;
+  flex-grow: 0;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 20px 10px;
+  max-width: 500px;
+  padding: 15px;
+  background: white;
+  border-radius: .25rem;
+  flex-grow: 0;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 500;
 }
