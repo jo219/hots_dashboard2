@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
 // import { Link } from 'react-router-dom';
 
 
@@ -8,9 +7,6 @@ export default function Navbar() {
 
   return (
     <div style={{background: 'white'}}>
-      <Head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-      </Head>
       <div class="sh">
         <div class="ctn" style={{background: 'white', zIndex: '10001'}}>
           <img src="/images/logo-mirae.png" width="170" alt="Logo" style={{marginTop: '12px', marginBottom: '3px', marginLeft: '20px'}} />
